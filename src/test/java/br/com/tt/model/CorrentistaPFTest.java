@@ -14,17 +14,11 @@ class CorrentistaPFTest {
 
         String retornado = correntistaPF.getDescricao();
 
-        String esperado = new StringBuffer()
-                .append("Nome: ")
-                .append("Fabiano")
-                .append(". Tipo Conta: ")
-                .append("PF")
-                .append(". Agencia: ")
-                .append(String.valueOf(2))
-                .append(". Conta NUm: ")
-                .append(String.valueOf(777))
-                .append(". Documento: ")
-                .append("CPF").toString();
+        String esperado = "Nome: Fabiano. Tipo Conta: PF. Agencia: "
+                .concat(String.valueOf(2))
+                .concat(". Conta NUm: ")
+                .concat(String.valueOf(777))
+                .concat(". Documento: CPF");
 
         Assertions.assertEquals(esperado,retornado);
 
