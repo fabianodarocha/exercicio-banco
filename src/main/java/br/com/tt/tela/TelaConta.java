@@ -38,7 +38,7 @@ public class TelaConta implements Tela{
         }
     }
 
-    private void exibeMenuCriarConta() {
+    public void exibeMenuCriarConta() {
         usuarioUtil.exibeMensagem("informe a agencia da conta: ");
         int agencia = Integer.parseInt(this.scanner.nextLine());
         usuarioUtil.exibeMensagem("Agência cadastrada com sucesso!");
@@ -53,7 +53,7 @@ public class TelaConta implements Tela{
 
     }
 
-    private void exibeMenuListarConta() {
+    public void exibeMenuListarConta() {
         List<Conta> lista = bancoDao.listarContas();
         usuarioUtil.exibeMensagem("Lista de contas: ");
 
