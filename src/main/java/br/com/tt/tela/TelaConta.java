@@ -41,11 +41,11 @@ public class TelaConta implements Tela{
     public void exibeMenuCriarConta() {
         usuarioUtil.exibeMensagem("informe a agencia da conta: ");
         int agencia = Integer.parseInt(this.scanner.nextLine());
-        usuarioUtil.exibeMensagem("Agência cadastrada com sucesso!");
+        //usuarioUtil.exibeMensagem("Agência cadastrada com sucesso!");
 
         usuarioUtil.exibeMensagem("informe o numero da conta: ");
         int contaNumero = Integer.parseInt(this.scanner.nextLine());
-        usuarioUtil.exibeMensagem("Numero de Conta cadastrada com sucesso!");
+        //usuarioUtil.exibeMensagem("Numero de Conta cadastrada com sucesso!");
 
 
         bancoDao.adicionarConta(new Conta(agencia, contaNumero));
