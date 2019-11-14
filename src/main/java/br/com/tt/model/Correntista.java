@@ -1,6 +1,6 @@
 package br.com.tt.model;
 
-public abstract class Correntista {
+public class Correntista {
 
     private String nome;
     private Conta conta;

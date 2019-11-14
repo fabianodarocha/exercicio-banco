@@ -71,10 +71,49 @@ public class TelaContaComMockTest {
             Mockito.verify(usuarioUtil).exibeMensagem(conta.getDescricao());
         }
 
+    }
 
+    @Test
+    public void exibeMenuComSucessoOpcao1() {
+
+        //Arranje
+        Mockito.doReturn("1").when(scanner).nextLine();
+
+        //Act
+        new TelaConta(bancoDao, scanner, usuarioUtil).exibeMenu();
+
+        //Assert
+        Mockito.verify(usuarioUtil)
+                .exibeMensagem("Menu Conta\n"
+                        .concat("Escolha uma opção: \n")
+                        .concat("1-Criar Conta\n")
+                        .concat("2-Listar Conta\n"));
+
+        Mockito.verify(scanner, Mockito.times(3)).nextLine();
+        Mockito.verify(usuarioUtil).exibeMensagem("informe a agencia da conta: ");
 
     }
 
+    @Test
+    public void exibeMenuComSucessoOpcao2() {
+
+        //Arranje
+        Mockito.doReturn("2").when(scanner).nextLine();
+
+        //Act
+        new TelaConta(bancoDao, scanner, usuarioUtil).exibeMenu();
+
+        //Assert
+        Mockito.verify(usuarioUtil)
+                .exibeMensagem("Menu Conta\n"
+                        .concat("Escolha uma opção: \n")
+                        .concat("1-Criar Conta\n")
+                        .concat("2-Listar Conta\n"));
+
+        Mockito.verify(scanner).nextLine();
+        Mockito.verify(usuarioUtil).exibeMensagem("Lista de contas: ");
+
+    }
 
 
 }
